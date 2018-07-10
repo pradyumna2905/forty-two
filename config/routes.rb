@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     end
 
     authenticated :user do
-      # root to: '?', as: :authenticated_root
+      root to: 'dashboards#show', as: :authenticated_root
     end
   end
 end
