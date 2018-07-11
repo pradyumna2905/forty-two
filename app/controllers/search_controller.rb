@@ -1,6 +1,5 @@
 class SearchController < ApplicationController
   def show
-    search = SearchService.new(current_user, params)
-    meaning = search.meaning
+    @entry = SearchService.new(current_user, params)
   end
 end

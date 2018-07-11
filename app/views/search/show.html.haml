@@ -1,0 +1,9 @@
+- if @entry.meaning.present?
+  .col-6.offset-md-3.mt-5
+    .card
+      .card-header= @entry.word
+      .card-body
+        %p= @entry.meaning
+- else
+  .col-6.offset-md-3.mt-5
+    No meaning found.
