@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_07_11_013220) do
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
-  create_table "forty_two_dictionaries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "dictionaries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "word"
     t.text "response"
     t.datetime "created_at", null: false
