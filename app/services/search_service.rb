@@ -3,4 +3,8 @@ class SearchService
     @current_user = current_user
     @params = params.dup
   end
+
+  def entry
+    FortyTwo::DictionaryAdapter.fetch_entry(@params[:w])
+  end
 end

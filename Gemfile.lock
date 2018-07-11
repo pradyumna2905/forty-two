@@ -96,6 +96,8 @@ GEM
       temple (>= 0.8.0)
       thor
       tilt
+    httparty (0.16.2)
+      multi_xml (>= 0.5.2)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -124,11 +126,13 @@ GEM
     minitest (5.11.3)
     msgpack (1.2.4)
     multi_json (1.13.1)
+    multi_xml (0.6.0)
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     pg (1.0.0)
+    plissken (1.2.0)
     popper_js (1.12.9)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -240,10 +244,12 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   hamlit
+  httparty
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
+  plissken
   pry
   pry-nav
   puma (~> 3.11)

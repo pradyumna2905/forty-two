@@ -21,6 +21,9 @@ module FortyTwo
       g.orm :active_record, primary_key_type: :uuid
     end
 
-    config.eager_load_paths.push(*%W[#{config.root}/lib])
+    config.eager_load_paths.push(*%W[#{config.root}/lib
+                                     #{config.root}/forty_two
+                                     #{config.root}/forty_two/oxford_dictionary
+                                     #{config.root}/app/services/dictionary/*])
   end
 end
