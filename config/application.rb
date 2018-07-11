@@ -20,5 +20,7 @@ module FortyTwo
     config.generators do |g|
       g.orm :active_record, primary_key_type: :uuid
     end
+
+    config.eager_load_paths.push(*%W[#{config.root}/lib])
   end
 end

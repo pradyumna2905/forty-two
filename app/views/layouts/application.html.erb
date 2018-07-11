@@ -9,8 +9,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <%= render 'shared/navbar' if current_user %>
   <body>
+    <%= render 'shared/navbar' if current_user %>
+    <div class="mt-4 col-md-6 offset-md-3">
+      <%= render 'shared/search' if current_user %>
+    </div>
     <%= yield %>
   </body>
 </html>
