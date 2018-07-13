@@ -47,9 +47,17 @@ gem 'devise'
 
 gem 'simple_form'
 
+# Rest client
+gem 'httparty'
+
+# Snakify camel case
+gem 'plissken'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 group :development do
