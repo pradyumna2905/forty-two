@@ -1,11 +1,9 @@
+%h1.text-center.my-2 History
 - @entries.each do |entry|
-  .col-6.offset-md-3.mt-5
+  .col-6.offset-md-3
     .card
       .card-header= entry.word
-      .card-body
-        %blockquote.blockquote.mb-0
-          %p= entry.response
-          %footer.blockquote-footer
-            Someone famous in
-            %cite{:title => "Source Title"} Source Title
+      - entry.definitions.each do |definition|
+        .card-body
+          %p= definition
 

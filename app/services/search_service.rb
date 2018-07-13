@@ -5,6 +5,17 @@ class SearchService
   end
 
   def entry
-    FortyTwo::DictionaryAdapter.fetch_entry(@params[:w])
+    search_from_user_entries || search_entry
+  end
+
+  private
+
+  def search_from_user_entries
+    @current_user.entries.find_by(word: @params[:w].downcase)
+  end
+
+  def search_entry
+    entry = FortyTwo::DictionaryAdapter.fetch_entry(@params[:w])
+    Entries::CreateService.new(@current_user, entry).execute
   end
 end

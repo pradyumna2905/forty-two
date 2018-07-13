@@ -1,8 +1,8 @@
 module FortyTwo::OxfordDictionary
   module Request
     # Keys
-    APP_ID = ENV.fetch('APP_ID') { '76b1795b' }
-    APP_KEY = ENV.fetch('APP_KEY') { 'f3b8453976f23d32db09cd39d7b1bd76' }
+    APP_ID = ENV.fetch('APP_ID')
+    APP_KEY = ENV.fetch('APP_KEY')
 
     # Constants
     BASE = 'https://od-api.oxforddictionaries.com/api/v1'.freeze

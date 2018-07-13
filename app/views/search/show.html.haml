@@ -3,7 +3,8 @@
     .card
       .card-header= @entry.word
       .card-body
-        %p= @entry.response
+        - @entry.definitions.each do |definition|
+          %p= definition
 - else
   .col-6.offset-md-3.mt-5
     No meaning found.

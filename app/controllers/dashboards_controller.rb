@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
   def show
-    @entries = FortyTwo::Dictionary.all
+    @entries = current_user.entries
   end
 end
