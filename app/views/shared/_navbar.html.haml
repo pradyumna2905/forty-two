@@ -4,6 +4,8 @@
       .text-black-50 forty
       .text-dark  two
 
+  .flex-grow-1.mx-5= render 'shared/search'
+
   .dropdown
     = link_to current_user.email, '', class: 'text-dark dropdown-toggle', id: 'dropdownMenuLink', aria: {expanded: false, haspopup: true}, data: {toggle: 'dropdown'}
     .dropdown-menu.dropdown-menu-right{"aria-labelledby" => "dropdownMenuLink"}
