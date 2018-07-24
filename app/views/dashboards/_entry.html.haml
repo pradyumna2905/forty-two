@@ -10,4 +10,7 @@
             - record.examples.each do |example|
               %li.card-text.text-secondary
                 %p.font-italic.my-0= example.inspect
+      .text-right
+        #addToDigest
+          = link_to_toggle_save_entry(entry)
 
