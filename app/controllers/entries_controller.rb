@@ -9,6 +9,10 @@ class EntriesController < ApplicationController
     end
   end
 
+  def history
+    @entries = current_user.entries.desc
+  end
+
   private
 
   def update_params

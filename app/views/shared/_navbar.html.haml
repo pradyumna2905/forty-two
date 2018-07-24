@@ -13,8 +13,8 @@
       %li.nav-item.dropdown.text-center
         = link_to current_user.email, '', class: 'text-dark dropdown-toggle', id: 'dropdownMenuLink', aria: {expanded: false, haspopup: true}, data: {toggle: 'dropdown'}
         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-          = link_to 'Digest', '', class: 'dropdown-item'
-          = link_to 'History', '', class: 'dropdown-item'
+          = link_to 'Digest', authenticated_root_path, class: 'dropdown-item'
+          = link_to 'History', user_entries_history_path(current_user), class: 'dropdown-item'
           .dropdown-divider
           = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item'
 
