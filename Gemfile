@@ -15,6 +15,8 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.1.1'
 gem 'font-awesome-rails'
 
+gem 'awesome_print'
+
 # HAML
 gem 'hamlit'
 

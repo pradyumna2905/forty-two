@@ -1,0 +1,8 @@
+.col-6.offset-md-3.my-4
+  .card
+    .card-body
+      %h2= entry.word
+      %ol
+        - entry.definitions.each do |definition|
+          %li.card-text.my-2= definition
+
