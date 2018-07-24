@@ -14,6 +14,8 @@ module FortyTwo
 
       private
 
+      # Fetches entry from the Oxford API and saves to FortyTwo::Dictionary
+      # (internal cache)
       def fetch_from_oxford(word)
         response = FortyTwo::OxfordDictionary::Client.fetch_entry(word)
 
@@ -30,7 +32,7 @@ module FortyTwo
 
         # Add the word in entry_params
         entry_params[:word] = entry.word
-        entry_params[:definitions] = definitions_parser(entry.response)
+        entry_params[:records] = records_parser(entry.response)
 
         entry_params
       end
@@ -42,21 +44,32 @@ module FortyTwo
       # moving along.
       #
       # TODO: Fix fix fix. At least find a better way than recursive iteration.
-      def definitions_parser(response)
-        definitions = []
-        response['results'].each do |result|
-          result['lexical_entries'].each do |lexical_entry|
-            lexical_entry['entries'].each do |entry|
-              entry['senses'].each do |sense|
-                sense['definitions'].each do |definition|
-                  definitions << definition
+      def records_parser(response)
+        records = []
+
+        response.results.each do |result|
+          result.lexical_entries.each do |lexical_entry|
+            lexical_entry.entries.each do |entry|
+              entry.senses.each do |sense|
+                record_params = FortyTwo::RecordParams.new
+
+                # First store the definitions
+                sense.definitions.each do |definition|
+                  record_params.definitions << definition
                 end
+
+                # Then store the examples
+                sense.examples.each do |example|
+                  record_params.examples << example.text
+                end
+
+                records << record_params
               end
             end
           end
         end
 
-        definitions
+        records
       end
     end
   end

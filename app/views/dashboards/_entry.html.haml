@@ -1,0 +1,12 @@
+.col-6.offset-md-3.my-4
+  .card
+    .card-body
+      %h2= entry.word
+      %ol
+        - entry.records.each do |record|
+          - record.definitions.each do |definition|
+            %li.card-text.my-2= definition
+          %ol
+            - record.examples.each do |example|
+              %li.card-text.text-secondary= example.inspect
+

@@ -13,6 +13,9 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.1.1'
+gem 'font-awesome-rails'
+
+gem 'awesome_print'
 
 # HAML
 gem 'hamlit'

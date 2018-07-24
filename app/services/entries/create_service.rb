@@ -6,10 +6,16 @@ module Entries
     end
 
     def execute
-      @entry = @current_user.entries.build(@params)
+      @entry = @current_user.entries.build(@params.slice(:word))
 
       @entry.tap do |entry|
-        entry.save!
+        ActiveRecord::Base.transaction do
+          entry.save!
+
+          @params.slice(:records).dig(:records).each do |record_params|
+            ::Records::CreateService.new(entry, record_params).execute
+          end
+        end
       end
 
     rescue ActiveRecord::RecordInvalid => e
