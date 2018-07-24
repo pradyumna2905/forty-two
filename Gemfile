@@ -15,6 +15,9 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.1.1'
 gem 'font-awesome-sass', '~> 5.0.13'
 
+# Application Settings
+gem 'settingslogic'
+
 gem 'awesome_print'
 
 # HAML
