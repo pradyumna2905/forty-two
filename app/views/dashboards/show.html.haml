@@ -1,5 +1,5 @@
 .my-4
   .flex-grow-1.mx-5.my-4.d-block.d-sm-none= render 'shared/search'
 
-  %h1.text-center.mt-2 History
-  = render partial: 'entry', collection: @entries
+  %h1.text-center.mt-2 Digest
+  = render partial: 'entries/entry', collection: @entries.saved

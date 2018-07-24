@@ -11,5 +11,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :user, only: :none do
+    resources :entries, only: [:update]
+    get 'entries/history', to: 'entries#history'
+  end
+
   get :search, to: 'search#show'
 end
