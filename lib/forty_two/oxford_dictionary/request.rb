@@ -51,7 +51,9 @@ module FortyTwo::OxfordDictionary
       if response.code == NOT_FOUND
         { status: response.code, data: [] }
       elsif response.code == HTTP_OK
-        { status: response.code, data: JSON.parse(response.body).to_snake_keys }
+        { status: response.code,
+          data: JSON.parse(response.to_snake_keys.to_json, object_class: OpenStruct)
+        }
       else
         raise('Something went wrong')
       end

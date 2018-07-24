@@ -1,5 +1,5 @@
 class FortyTwo::Dictionary < ApplicationRecord
-  serialize :response, JSON
+  serialize :response, OpenStruct
 
   before_save { self.word = word.downcase }
 end

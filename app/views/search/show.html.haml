@@ -1,10 +1,5 @@
 - if @entry.word.present?
-  .col-6.offset-md-3.mt-5
-    .card
-      .card-header= @entry.word
-      .card-body
-        - @entry.definitions.each do |definition|
-          %p= definition
+  = render partial: 'dashboards/entry', locals: {entry: @entry}
 - else
   .col-6.offset-md-3.mt-5
     No meaning found.
