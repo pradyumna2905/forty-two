@@ -8,5 +8,6 @@
             %li.card-text.my-2= definition
           %ol
             - record.examples.each do |example|
-              %li.card-text.text-secondary= example.inspect
+              %li.card-text.text-secondary
+                %p.font-italic.my-0= example.inspect
 
